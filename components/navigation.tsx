@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -20,7 +20,7 @@ export function Navigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed w-full z-50 bg-[#004581] text-white">
+    <nav className="fixed w-full z-50 bg-white text-[#018ABD]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <motion.div
@@ -49,7 +49,7 @@ export function Navigation() {
                   className={`px-3 py-2 rounded-md text-sm font-medium relative ${
                     pathname === item.href
                       ? "text-[#97CBDC]"
-                      : "text-white hover:text-[#018ABD]"
+                      : "text-[#018ABD] hover:text-[#15313b]"
                   }`}
                 >
                   {pathname === item.href && (
@@ -68,7 +68,7 @@ export function Navigation() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-[#018ABD]"
+              className="inline-flex items-center justify-center p-2 rounded-md text-[#018ABD] hover:text-[#15313b]"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -85,7 +85,7 @@ export function Navigation() {
             exit={{ opacity: 0, y: -10 }}
             className="md:hidden"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#004581]">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
@@ -94,7 +94,7 @@ export function Navigation() {
                   className={`block px-3 py-2 rounded-md text-base font-medium ${
                     pathname === item.href
                       ? "text-[#97CBDC]"
-                      : "text-white hover:text-[#018ABD]"
+                      : "text-[#018ABD] hover:text-white"
                   }`}
                 >
                   {item.label}
