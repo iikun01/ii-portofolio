@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center p-4">
-      <div className="flex flex-col md:flex-row items-center justify-center max-w-6xl mx-auto gap-12">
+      <div className="flex flex-col md:flex-row items-center justify-center max-w-6xl mx-auto gap-20">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
